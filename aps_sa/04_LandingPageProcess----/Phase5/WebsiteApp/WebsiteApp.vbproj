@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C4E4F16-E2C3-49B7-B93F-5A23D298CE1E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WebsiteApp</RootNamespace>
+    <AssemblyName>WebsiteApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>WebsiteApp.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>WebsiteApp.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\WebsiteApp.pdb" />
+    <Content Include="bin\WebsiteApp.xml" />
+    <Content Include="bin\WebsiteApp.XmlSerializers.dll" />
+    <Content Include="css\AccAcq.css" />
+    <Content Include="css\development.png" />
+    <Content Include="css\form.css" />
+    <Content Include="css\Images\AbuKanan.gif" />
+    <Content Include="css\Images\AbuKiri.gif" />
+    <Content Include="css\Images\bg.jpg" />
+    <Content Include="css\Images\BiruKanan.gif" />
+    <Content Include="css\Images\BiruKiri.gif" />
+    <Content Include="css\Images\botomleft.gif" />
+    <Content Include="css\Images\botomright.gif" />
+    <Content Include="css\Images\BrownKanan.gif" />
+    <Content Include="css\Images\BrownKiri.gif" />
+    <Content Include="css\Images\butgo.gif" />
+    <Content Include="css\Images\butkanan.gif" />
+    <Content Include="css\Images\butkanan1.gif" />
+    <Content Include="css\Images\butkiri.gif" />
+    <Content Include="css\Images\butkiri1.gif" />
+    <Content Include="css\Images\ButtonDone.gif" />
+    <Content Include="css\Images\ButtonEdit.gif" />
+    <Content Include="css\Images\ButtonReset.gif" />
+    <Content Include="css\Images\ButtonSearch.gif" />
+    <Content Include="css\Images\CoklatKanan.gif" />
+    <Content Include="css\Images\CoklatKiri.gif" />
+    <Content Include="css\Images\Hijau2Kanan.gif" />
+    <Content Include="css\Images\Hijau2Kiri.gif" />
+    <Content Include="css\Images\HijauKanan.gif" />
+    <Content Include="css\Images\HijauKiri.gif" />
+    <Content Include="css\Images\Iblack.png" />
+    <Content Include="css\Images\iviewer.rotate_left.png" />
+    <Content Include="css\Images\iviewer.rotate_right.png" />
+    <Content Include="css\Images\iviewer.zoom_fit.gif" />
+    <Content Include="css\Images\iviewer.zoom_zero.gif" />
+    <Content Include="css\Images\Kuningkanan.gif" />
+    <Content Include="css\Images\KuningKiri.gif" />
+    <Content Include="css\Images\loadingP.gif" />
+    <Content Include="css\Images\logoblue.jpg" />
+    <Content Include="css\Images\logo_buana.jpg" />
+    <Content Include="css\Images\MerahKanan.gif" />
+    <Content Include="css\Images\MerahKiri.gif" />
+    <Content Include="css\Images\note-add.png" />
+    <Content Include="css\Images\note-edit.png" />
+    <Content Include="css\Images\OrangeKanan.gif" />
+    <Content Include="css\Images\OrangeKiri.gif" />
+    <Content Include="css\Images\plus.gif" />
+    <Content Include="css\Images\Qblack.png" />
+    <Content Include="css\Images\Qblue.png" />
+    <Content Include="css\Images\Qgreen.png" />
+    <Content Include="css\Images\Qorange.png" />
+    <Content Include="css\Images\Qred.png" />
+    <Content Include="css\Images\sa.png" />
+    <Content Include="css\Images\sa1.png" />
+    <Content Include="css\Images\sd.png" />
+    <Content Include="css\Images\sd1.png" />
+    <Content Include="css\Images\ToscaKanan.gif" />
+    <Content Include="css\Images\ToscaKiri.gif" />
+    <Content Include="css\Images\Ungu2Kanan.gif" />
+    <Content Include="css\Images\Ungu2Kiri.gif" />
+    <Content Include="css\Images\UnguKanan.gif" />
+    <Content Include="css\Images\UnguKiri.gif" />
+    <Content Include="css\Images\upleft.gif" />
+    <Content Include="css\Images\upright.gif" />
+    <Content Include="css\Images\warning.jpg" />
+    <Content Include="css\Images\zoomIn.png" />
+    <Content Include="css\Images\zoomOut.png" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery.css" />
+    <Content Include="css\jquery.iviewer.css" />
+    <Content Include="css\jquery.ui.all.css" />
+    <Content Include="css\jquery.ui.autocomplete.css" />
+    <Content Include="css\jquery.ui.base.css" />
+    <Content Include="css\jquery.ui.button.css" />
+    <Content Include="css\jquery.ui.core.css" />
+    <Content Include="css\jquery.ui.dialog.css" />
+    <Content Include="css\jquery.ui.theme.css" />
+    <Content Include="css\customcalendar\calendar.css" />
+    <Content Include="css\customcalendar\calendar.js" />
+    <Content Include="css\customcalendar\calender.png" />
+    <Content Include="css\customcalendar\Close2.png" />
+    <Content Include="css\responsive-tabs.css" />
+    <Content Include="css\testing.png" />
+    <Content Include="customcalendar\calendar.css" />
+    <Content Include="customcalendar\calendar.js" />
+    <Content Include="customcalendar\calender.png" />
+    <Content Include="customcalendar\Close2.png" />
+    <Content Include="Form\Admin_Postback.asmx" />
+    <Content Include="Form\Admin_Startpage.aspx" />
+    <Content Include="Form\bg.jpg" />
+    <Content Include="Form\BM_Postback.asmx" />
+    <Content Include="Form\BM_StartPage.aspx" />
+    <Content Include="Form\BPCD_Postback.asmx" />
+    <Content Include="Form\BPCD_StartPage.aspx" />
+    <Content Include="Form\CalculatorCreditHistory.aspx" />
+    <Content Include="Form\CA_Postback.asmx" />
+    <Content Include="Form\CA_StartPage.aspx" />
+    <Content Include="Form\Host_ScorelistRO.aspx" />
+    <Content Include="Form\Host_CalculatorRefundRO.aspx" />
+    <Content Include="Form\Host_CalculatorRO.aspx" />
+    <Content Include="Form\Host_CatatanDocproRO.aspx" />
+    <Content Include="Form\Host_CamSurveyRO.aspx" />
+    <Content Include="Form\Host_IndentitasCadebBM.aspx" />
+    <Content Include="Form\Host_IndentitasCadebCA.aspx" />
+    <Content Include="Form\Host_SurveyRO.aspx" />
+    <Content Include="Form\Host_AssetnShowroomRO.aspx" />
+    <Content Include="Form\Host_CustRelatedDataRO.aspx" />
+    <Content Include="Form\Host_IndentitasCadebRO.aspx" />
+    <Content Include="Form\Images\Tab_Off.png" />
+    <Content Include="Form\Images\Tab_Off130.png" />
+    <Content Include="Form\Images\Tab_On.png" />
+    <Content Include="Form\Images\Tab_On130.png" />
+    <Content Include="Form\modal.css" />
+    <Content Include="Form\modal.min.css" />
+    <Content Include="Form\tespage.aspx" />
+    <Content Include="Form\testingzoom.aspx" />
+    <Content Include="Form\ZTabGun.html" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="HtmlPage2.html" />
+    <Content Include="images\ButtonTambahFile.gif" />
+    <Content Include="images\iconEdit.png" />
+    <Content Include="images\iconOpenAttachement.png" />
+    <Content Include="images\logobnf.png" />
+    <Content Include="images\magnifier.gif" />
+    <Content Include="images\magnifier.png" />
+    <Content Include="images\pembatasbawah.gif" />
+    <Content Include="images\sortasc.png" />
+    <Content Include="images\sortdesc.png" />
+    <Content Include="images\Tab_Off.png" />
+    <Content Include="images\Tab_Off130.png" />
+    <Content Include="images\Tab_On.png" />
+    <Content Include="images\Tab_On130.png" />
+    <Content Include="itabs.html" />
+    <Content Include="JScript\Blocking.js" />
+    <Content Include="JScript\popupFormInv_sub.js" />
+    <Content Include="JScript\popupForm_sub.js" />
+    <Content Include="JScript\general.js" />
+    <Content Include="JScript\jquery-1.5.1.js" />
+    <Content Include="JScript\jquery.effects.clip.js" />
+    <Content Include="JScript\jquery.effects.core.js" />
+    <Content Include="JScript\jquery.iviewer.js" />
+    <Content Include="JScript\jquery.json-1.3.min.js" />
+    <Content Include="JScript\jquery.mousewheel.min.js" />
+    <Content Include="JScript\jquery.tablesorter.js" />
+    <Content Include="JScript\jquery.ui.core.js" />
+    <Content Include="JScript\jquery.ui.dialog.js" />
+    <Content Include="JScript\jquery.ui.draggable.js" />
+    <Content Include="JScript\jquery.ui.mouse.js" />
+    <Content Include="JScript\jquery.ui.position.js" />
+    <Content Include="JScript\jquery.ui.resizable.js" />
+    <Content Include="JScript\jquery.ui.widget.js" />
+    <Content Include="JScript\jqueryui.js" />
+    <Content Include="JScript\open_url.js" />
+    <Content Include="JScript\popupForm.js" />
+    <Content Include="js\responsiveTabs.js" />
+    <Content Include="js\responsiveTabs.min.js" />
+    <Content Include="rolesimulation.aspx" />
+    <Content Include="UserControl\ucAssetShowrom.ascx" />
+    <Content Include="UserControl\ucCamSurvey.ascx" />
+    <Content Include="UserControl\ucCatatanDocpro.ascx" />
+    <Content Include="UserControl\ucCreditCalculator.ascx" />
+    <Content Include="UserControl\ucRefund.ascx" />
+    <Content Include="UserControl\ucRelatedData.ascx" />
+    <Content Include="UserControl\ucSurvey.ascx" />
+    <Content Include="vb.aspx" />
+    <Content Include="WarningPage.aspx" />
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="packages.config" />
+    <None Include="Web References\WebServiceUser\ClassUsers.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="welcome.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cls\ClsApp_Extension.vb" />
+    <Compile Include="cls\ClsApp.vb" />
+    <Compile Include="cls\clsCommon.vb">
+    </Compile>
+    <Compile Include="cls\ClsData.vb" />
+    <Compile Include="cls\clsQry.vb" />
+    <Compile Include="cls\ClsSendMail_SubmitCabang.vb" />
+    <Compile Include="cls\clsUser.vb" />
+    <Compile Include="cls\GlobalVariables.vb" />
+    <Compile Include="Form\Admin_Postback.asmx.vb">
+      <DependentUpon>Admin_Postback.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\Admin_Startpage.aspx.designer.vb">
+      <DependentUpon>Admin_Startpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin_Startpage.aspx.vb">
+      <DependentUpon>Admin_Startpage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\BM_Postback.asmx.vb">
+      <DependentUpon>BM_Postback.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\BM_StartPage.aspx.designer.vb">
+      <DependentUpon>BM_StartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BM_StartPage.aspx.vb">
+      <DependentUpon>BM_StartPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\BPCD_Postback.asmx.vb">
+      <DependentUpon>BPCD_Postback.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\BPCD_StartPage.aspx.designer.vb">
+      <DependentUpon>BPCD_StartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BPCD_StartPage.aspx.vb">
+      <DependentUpon>BPCD_StartPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\CalculatorCreditHistory.aspx.designer.vb">
+      <DependentUpon>CalculatorCreditHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CalculatorCreditHistory.aspx.vb">
+      <DependentUpon>CalculatorCreditHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\CA_Postback.asmx.vb">
+      <DependentUpon>CA_Postback.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\CA_StartPage.aspx.designer.vb">
+      <DependentUpon>CA_StartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CA_StartPage.aspx.vb">
+      <DependentUpon>CA_StartPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_ScorelistRO.aspx.designer.vb">
+      <DependentUpon>Host_ScorelistRO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_ScorelistRO.aspx.vb">
+      <DependentUpon>Host_ScorelistRO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_CalculatorRefundRO.aspx.designer.vb">
+      <DependentUpon>Host_CalculatorRefundRO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_CalculatorRefundRO.aspx.vb">
+      <DependentUpon>Host_CalculatorRefundRO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_CalculatorRO.aspx.designer.vb">
+      <DependentUpon>Host_CalculatorRO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_CalculatorRO.aspx.vb">
+      <DependentUpon>Host_CalculatorRO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_CatatanDocproRO.aspx.designer.vb">
+      <DependentUpon>Host_CatatanDocproRO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_CatatanDocproRO.aspx.vb">
+      <DependentUpon>Host_CatatanDocproRO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_CamSurveyRO.aspx.designer.vb">
+      <DependentUpon>Host_CamSurveyRO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_CamSurveyRO.aspx.vb">
+      <DependentUpon>Host_CamSurveyRO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_IndentitasCadebBM.aspx.designer.vb">
+      <DependentUpon>Host_IndentitasCadebBM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_IndentitasCadebBM.aspx.vb">
+      <DependentUpon>Host_IndentitasCadebBM.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_IndentitasCadebCA.aspx.designer.vb">
+      <DependentUpon>Host_IndentitasCadebCA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_IndentitasCadebCA.aspx.vb">
+      <DependentUpon>Host_IndentitasCadebCA.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_SurveyRO.aspx.designer.vb">
+      <DependentUpon>Host_SurveyRO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_SurveyRO.aspx.vb">
+      <DependentUpon>Host_SurveyRO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_AssetnShowroomRO.aspx.designer.vb">
+      <DependentUpon>Host_AssetnShowroomRO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_AssetnShowroomRO.aspx.vb">
+      <DependentUpon>Host_AssetnShowroomRO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_CustRelatedDataRO.aspx.designer.vb">
+      <DependentUpon>Host_CustRelatedDataRO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_CustRelatedDataRO.aspx.vb">
+      <DependentUpon>Host_CustRelatedDataRO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\Host_IndentitasCadebRO.aspx.designer.vb">
+      <DependentUpon>Host_IndentitasCadebRO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Host_IndentitasCadebRO.aspx.vb">
+      <DependentUpon>Host_IndentitasCadebRO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\tespage.aspx.designer.vb">
+      <DependentUpon>tespage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\tespage.aspx.vb">
+      <DependentUpon>tespage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Form\testingzoom.aspx.designer.vb">
+      <DependentUpon>testingzoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\testingzoom.aspx.vb">
+      <DependentUpon>testingzoom.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="rolesimulation.aspx.designer.vb">
+      <DependentUpon>rolesimulation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rolesimulation.aspx.vb">
+      <DependentUpon>rolesimulation.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="UserControl\ucAssetShowrom.ascx.designer.vb">
+      <DependentUpon>ucAssetShowrom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucAssetShowrom.ascx.vb">
+      <DependentUpon>ucAssetShowrom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucCamSurvey.ascx.designer.vb">
+      <DependentUpon>ucCamSurvey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucCamSurvey.ascx.vb">
+      <DependentUpon>ucCamSurvey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucCatatanDocpro.ascx.designer.vb">
+      <DependentUpon>ucCatatanDocpro.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucCatatanDocpro.ascx.vb">
+      <DependentUpon>ucCatatanDocpro.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucCreditCalculator.ascx.designer.vb">
+      <DependentUpon>ucCreditCalculator.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucCreditCalculator.ascx.vb">
+      <DependentUpon>ucCreditCalculator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucRefund.ascx.designer.vb">
+      <DependentUpon>ucRefund.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucRefund.ascx.vb">
+      <DependentUpon>ucRefund.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucRelatedData.ascx.designer.vb">
+      <DependentUpon>ucRelatedData.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucRelatedData.ascx.vb">
+      <DependentUpon>ucRelatedData.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucSurvey.ascx.designer.vb">
+      <DependentUpon>ucSurvey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucSurvey.ascx.vb">
+      <DependentUpon>ucSurvey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vb.aspx.designer.vb">
+      <DependentUpon>vb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vb.aspx.vb">
+      <DependentUpon>vb.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WarningPage.aspx.designer.vb">
+      <DependentUpon>WarningPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WarningPage.aspx.vb">
+      <DependentUpon>WarningPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Web References\WebServiceUser\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="welcome.aspx.designer.vb">
+      <DependentUpon>welcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="welcome.aspx.vb">
+      <DependentUpon>welcome.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="css\Images\logoblue.psd" />
+    <None Include="Form\LICENSE" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\WebServiceUser\ClassUsers.wsdl" />
+    <None Include="Web References\WebServiceUser\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.10.1.41:8089/publicWebservices/ClassUsers.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebServiceUser\</RelPath>
+      <UpdateFromURL>http://10.10.1.41:8089/publicWebservices/ClassUsers.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WebsiteApp_WebServiceUser_Users_x0020_Access_x0020_Web_x0020_Services</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54345</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

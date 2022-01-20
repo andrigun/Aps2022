@@ -1,0 +1,24 @@
+select * from tblLandingPageHistory
+select * from tblstatusovp
+select * from [TblOVPDetail] --fajar
+select * from [REF_OVP]  --fajar
+select * from landingpage
+
+--select * from [REF_STATUS]   --tidak dipakai digantikan tblstatusovp
+
+
+
+/*
+select * into tblaccesslistOVP from tblaccesslist
+
+truncate table tblaccesslistOVP
+
+select * from tblaccesslistOVP
+
+
+insert tblaccesslistOVP values ('BPCD' ,'(''NEWDT'', ''CBASC'',''RJC'', ''RPOVP'', ''DROVP'', ''RMOS'', ''STLOS'')',1)
+insert tblaccesslistOVP values ('CCARE' ,'(''NEWDT'', ''CBASC'',''RJC'', ''RPOVP'', ''DROVP'', ''RMOS'', ''STLOS'')',1)
+
+
+
+*/

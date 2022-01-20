@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://WebServicesDataUser.itdev/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://WebServicesDataUser.itdev/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Services yang digunakan untuk mendapatkan informasi mengenai data-data user&lt;br&gt;Koneksi yang di pakai adalah ke Server : 10.10.1.9 dan Database : AAM&lt;br&gt;</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://WebServicesDataUser.itdev/">
+      <s:element name="getApplicationList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isAll" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getApplicationListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getApplicationListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserNameIfValid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userEncrypted" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserNameIfValidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUserNameIfValidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getApplicationAccessRight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getApplicationAccessRightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getApplicationAccessRightResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getModuleAccessRight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="moduleID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getModuleAccessRightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getModuleAccessRightResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getModuleFunctionAccessRight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="moduleID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="functionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getModuleFunctionAccessRightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getModuleFunctionAccessRightResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getIsGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getIsGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getIsGroupResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUserDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isUserInformationExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isUserInformationExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isUserInformationExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUserInformationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Display_NoteAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Display_NoteAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Display_NoteAdminResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getApplicationListSoapIn">
+    <wsdl:part name="parameters" element="tns:getApplicationList" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationListSoapOut">
+    <wsdl:part name="parameters" element="tns:getApplicationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUserNameIfValidSoapIn">
+    <wsdl:part name="parameters" element="tns:getUserNameIfValid" />
+  </wsdl:message>
+  <wsdl:message name="getUserNameIfValidSoapOut">
+    <wsdl:part name="parameters" element="tns:getUserNameIfValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationAccessRightSoapIn">
+    <wsdl:part name="parameters" element="tns:getApplicationAccessRight" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationAccessRightSoapOut">
+    <wsdl:part name="parameters" element="tns:getApplicationAccessRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="getModuleAccessRightSoapIn">
+    <wsdl:part name="parameters" element="tns:getModuleAccessRight" />
+  </wsdl:message>
+  <wsdl:message name="getModuleAccessRightSoapOut">
+    <wsdl:part name="parameters" element="tns:getModuleAccessRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="getModuleFunctionAccessRightSoapIn">
+    <wsdl:part name="parameters" element="tns:getModuleFunctionAccessRight" />
+  </wsdl:message>
+  <wsdl:message name="getModuleFunctionAccessRightSoapOut">
+    <wsdl:part name="parameters" element="tns:getModuleFunctionAccessRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="getIsGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:getIsGroup" />
+  </wsdl:message>
+  <wsdl:message name="getIsGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:getIsGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUserDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getUserData" />
+  </wsdl:message>
+  <wsdl:message name="getUserDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="isUserInformationExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:isUserInformationExists" />
+  </wsdl:message>
+  <wsdl:message name="isUserInformationExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:isUserInformationExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUserInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:getUserInformation" />
+  </wsdl:message>
+  <wsdl:message name="getUserInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:getUserInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Display_NoteAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:Display_NoteAdmin" />
+  </wsdl:message>
+  <wsdl:message name="Display_NoteAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:Display_NoteAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationListHttpGetIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="isAll" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getUserNameIfValidHttpGetIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="userEncrypted" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getUserNameIfValidHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationAccessRightHttpGetIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="appID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationAccessRightHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getModuleAccessRightHttpGetIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="appID" type="s:string" />
+    <wsdl:part name="moduleID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getModuleAccessRightHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getModuleFunctionAccessRightHttpGetIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="appID" type="s:string" />
+    <wsdl:part name="moduleID" type="s:string" />
+    <wsdl:part name="functionID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getModuleFunctionAccessRightHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getIsGroupHttpGetIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="groupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getIsGroupHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getUserDataHttpGetIn">
+    <wsdl:part name="userID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getUserDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="isUserInformationExistsHttpGetIn">
+    <wsdl:part name="userID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isUserInformationExistsHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getUserInformationHttpGetIn">
+    <wsdl:part name="userID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getUserInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Display_NoteAdminHttpGetIn">
+    <wsdl:part name="appID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Display_NoteAdminHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationListHttpPostIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="isAll" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getUserNameIfValidHttpPostIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="userEncrypted" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getUserNameIfValidHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationAccessRightHttpPostIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="appID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationAccessRightHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getModuleAccessRightHttpPostIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="appID" type="s:string" />
+    <wsdl:part name="moduleID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getModuleAccessRightHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getModuleFunctionAccessRightHttpPostIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="appID" type="s:string" />
+    <wsdl:part name="moduleID" type="s:string" />
+    <wsdl:part name="functionID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getModuleFunctionAccessRightHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getIsGroupHttpPostIn">
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="groupID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getIsGroupHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getUserDataHttpPostIn">
+    <wsdl:part name="userID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getUserDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="isUserInformationExistsHttpPostIn">
+    <wsdl:part name="userID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="isUserInformationExistsHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getUserInformationHttpPostIn">
+    <wsdl:part name="userID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getUserInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Display_NoteAdminHttpPostIn">
+    <wsdl:part name="appID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Display_NoteAdminHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:portType name="Users_x0020_Access_x0020_Web_x0020_ServicesSoap">
+    <wsdl:operation name="getApplicationList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan daftar Aplikasi yang dapat di akses oleh user&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String), isAll (Boolean)&lt;/b&gt;&lt;br&gt;Note : parameter isAll digunakan untuk flaging saja. &lt;br&gt;Jika 'True' maka data yang di tampilkan adalah data daftar Aplikasi xxx&lt;br&gt;Jika 'False' maka data yang di tampilkan adalah data daftar Aplikasi xxx</wsdl:documentation>
+      <wsdl:input message="tns:getApplicationListSoapIn" />
+      <wsdl:output message="tns:getApplicationListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserNameIfValid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan User yang digunakan apakah sudah sesuai anatar userID dan passwordnya&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;String&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String), userEncrypted  (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getUserNameIfValidSoapIn" />
+      <wsdl:output message="tns:getUserNameIfValidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationAccessRight">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecakan apakah User mempunyai akses ke Aplikasi &lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String), AppID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getApplicationAccessRightSoapIn" />
+      <wsdl:output message="tns:getApplicationAccessRightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getModuleAccessRight">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User mempunyai akses ke Aplikasi sampai ke dalam level Module&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String),appID (String),moduleID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getModuleAccessRightSoapIn" />
+      <wsdl:output message="tns:getModuleAccessRightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getModuleFunctionAccessRight">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User mempunyai akses ke Aplikasi sampai ke dalam level Function&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String),appID (String),moduleID (String),functionID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getModuleFunctionAccessRightSoapIn" />
+      <wsdl:output message="tns:getModuleFunctionAccessRightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getIsGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User mempunyai akses ke Aplikasi berdasarkan Group ID&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String),groupID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getIsGroupSoapIn" />
+      <wsdl:output message="tns:getIsGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan informasi mengenai Nama User, BranchID dan Branch Name&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getUserDataSoapIn" />
+      <wsdl:output message="tns:getUserDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isUserInformationExists">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User masih aktif atau tidak&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:isUserInformationExistsSoapIn" />
+      <wsdl:output message="tns:isUserInformationExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserInformation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan informasi detail mengenai User&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getUserInformationSoapIn" />
+      <wsdl:output message="tns:getUserInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Display_NoteAdmin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan informasi catatan mengenai Aplikasi yang diinput melalui aplikasi Note Admin&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;AppID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Display_NoteAdminSoapIn" />
+      <wsdl:output message="tns:Display_NoteAdminSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Users_x0020_Access_x0020_Web_x0020_ServicesHttpGet">
+    <wsdl:operation name="getApplicationList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan daftar Aplikasi yang dapat di akses oleh user&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String), isAll (Boolean)&lt;/b&gt;&lt;br&gt;Note : parameter isAll digunakan untuk flaging saja. &lt;br&gt;Jika 'True' maka data yang di tampilkan adalah data daftar Aplikasi xxx&lt;br&gt;Jika 'False' maka data yang di tampilkan adalah data daftar Aplikasi xxx</wsdl:documentation>
+      <wsdl:input message="tns:getApplicationListHttpGetIn" />
+      <wsdl:output message="tns:getApplicationListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserNameIfValid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan User yang digunakan apakah sudah sesuai anatar userID dan passwordnya&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;String&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String), userEncrypted  (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getUserNameIfValidHttpGetIn" />
+      <wsdl:output message="tns:getUserNameIfValidHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationAccessRight">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecakan apakah User mempunyai akses ke Aplikasi &lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String), AppID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getApplicationAccessRightHttpGetIn" />
+      <wsdl:output message="tns:getApplicationAccessRightHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getModuleAccessRight">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User mempunyai akses ke Aplikasi sampai ke dalam level Module&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String),appID (String),moduleID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getModuleAccessRightHttpGetIn" />
+      <wsdl:output message="tns:getModuleAccessRightHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getModuleFunctionAccessRight">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User mempunyai akses ke Aplikasi sampai ke dalam level Function&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String),appID (String),moduleID (String),functionID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getModuleFunctionAccessRightHttpGetIn" />
+      <wsdl:output message="tns:getModuleFunctionAccessRightHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getIsGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User mempunyai akses ke Aplikasi berdasarkan Group ID&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String),groupID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getIsGroupHttpGetIn" />
+      <wsdl:output message="tns:getIsGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan informasi mengenai Nama User, BranchID dan Branch Name&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getUserDataHttpGetIn" />
+      <wsdl:output message="tns:getUserDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isUserInformationExists">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User masih aktif atau tidak&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:isUserInformationExistsHttpGetIn" />
+      <wsdl:output message="tns:isUserInformationExistsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserInformation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan informasi detail mengenai User&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getUserInformationHttpGetIn" />
+      <wsdl:output message="tns:getUserInformationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Display_NoteAdmin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan informasi catatan mengenai Aplikasi yang diinput melalui aplikasi Note Admin&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;AppID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Display_NoteAdminHttpGetIn" />
+      <wsdl:output message="tns:Display_NoteAdminHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Users_x0020_Access_x0020_Web_x0020_ServicesHttpPost">
+    <wsdl:operation name="getApplicationList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan daftar Aplikasi yang dapat di akses oleh user&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String), isAll (Boolean)&lt;/b&gt;&lt;br&gt;Note : parameter isAll digunakan untuk flaging saja. &lt;br&gt;Jika 'True' maka data yang di tampilkan adalah data daftar Aplikasi xxx&lt;br&gt;Jika 'False' maka data yang di tampilkan adalah data daftar Aplikasi xxx</wsdl:documentation>
+      <wsdl:input message="tns:getApplicationListHttpPostIn" />
+      <wsdl:output message="tns:getApplicationListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserNameIfValid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan User yang digunakan apakah sudah sesuai anatar userID dan passwordnya&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;String&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String), userEncrypted  (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getUserNameIfValidHttpPostIn" />
+      <wsdl:output message="tns:getUserNameIfValidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationAccessRight">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecakan apakah User mempunyai akses ke Aplikasi &lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String), AppID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getApplicationAccessRightHttpPostIn" />
+      <wsdl:output message="tns:getApplicationAccessRightHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getModuleAccessRight">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User mempunyai akses ke Aplikasi sampai ke dalam level Module&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String),appID (String),moduleID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getModuleAccessRightHttpPostIn" />
+      <wsdl:output message="tns:getModuleAccessRightHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getModuleFunctionAccessRight">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User mempunyai akses ke Aplikasi sampai ke dalam level Function&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String),appID (String),moduleID (String),functionID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getModuleFunctionAccessRightHttpPostIn" />
+      <wsdl:output message="tns:getModuleFunctionAccessRightHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getIsGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User mempunyai akses ke Aplikasi berdasarkan Group ID&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String),groupID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getIsGroupHttpPostIn" />
+      <wsdl:output message="tns:getIsGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan informasi mengenai Nama User, BranchID dan Branch Name&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getUserDataHttpPostIn" />
+      <wsdl:output message="tns:getUserDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isUserInformationExists">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk melakukan pengecekan apakah User masih aktif atau tidak&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;Boolean&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:isUserInformationExistsHttpPostIn" />
+      <wsdl:output message="tns:isUserInformationExistsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserInformation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan informasi detail mengenai User&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;UserID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getUserInformationHttpPostIn" />
+      <wsdl:output message="tns:getUserInformationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Display_NoteAdmin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fungsi yang digunakan untuk menampilkan informasi catatan mengenai Aplikasi yang diinput melalui aplikasi Note Admin&lt;br&gt;Nilai yang dikembalikan : &lt;b&gt;DataSet&lt;/b&gt;&lt;br&gt;Parameter yang diperlukan : &lt;b&gt;AppID (String)&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Display_NoteAdminHttpPostIn" />
+      <wsdl:output message="tns:Display_NoteAdminHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Users_x0020_Access_x0020_Web_x0020_ServicesSoap" type="tns:Users_x0020_Access_x0020_Web_x0020_ServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getApplicationList">
+      <soap:operation soapAction="http://WebServicesDataUser.itdev/getApplicationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserNameIfValid">
+      <soap:operation soapAction="http://WebServicesDataUser.itdev/getUserNameIfValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationAccessRight">
+      <soap:operation soapAction="http://WebServicesDataUser.itdev/getApplicationAccessRight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuleAccessRight">
+      <soap:operation soapAction="http://WebServicesDataUser.itdev/getModuleAccessRight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuleFunctionAccessRight">
+      <soap:operation soapAction="http://WebServicesDataUser.itdev/getModuleFunctionAccessRight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIsGroup">
+      <soap:operation soapAction="http://WebServicesDataUser.itdev/getIsGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserData">
+      <soap:operation soapAction="http://WebServicesDataUser.itdev/getUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isUserInformationExists">
+      <soap:operation soapAction="http://WebServicesDataUser.itdev/isUserInformationExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInformation">
+      <soap:operation soapAction="http://WebServicesDataUser.itdev/getUserInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Display_NoteAdmin">
+      <soap:operation soapAction="http://WebServicesDataUser.itdev/Display_NoteAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Users_x0020_Access_x0020_Web_x0020_ServicesSoap12" type="tns:Users_x0020_Access_x0020_Web_x0020_ServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getApplicationList">
+      <soap12:operation soapAction="http://WebServicesDataUser.itdev/getApplicationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserNameIfValid">
+      <soap12:operation soapAction="http://WebServicesDataUser.itdev/getUserNameIfValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationAccessRight">
+      <soap12:operation soapAction="http://WebServicesDataUser.itdev/getApplicationAccessRight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuleAccessRight">
+      <soap12:operation soapAction="http://WebServicesDataUser.itdev/getModuleAccessRight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuleFunctionAccessRight">
+      <soap12:operation soapAction="http://WebServicesDataUser.itdev/getModuleFunctionAccessRight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIsGroup">
+      <soap12:operation soapAction="http://WebServicesDataUser.itdev/getIsGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserData">
+      <soap12:operation soapAction="http://WebServicesDataUser.itdev/getUserData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isUserInformationExists">
+      <soap12:operation soapAction="http://WebServicesDataUser.itdev/isUserInformationExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInformation">
+      <soap12:operation soapAction="http://WebServicesDataUser.itdev/getUserInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Display_NoteAdmin">
+      <soap12:operation soapAction="http://WebServicesDataUser.itdev/Display_NoteAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Users_x0020_Access_x0020_Web_x0020_ServicesHttpGet" type="tns:Users_x0020_Access_x0020_Web_x0020_ServicesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="getApplicationList">
+      <http:operation location="/getApplicationList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserNameIfValid">
+      <http:operation location="/getUserNameIfValid" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationAccessRight">
+      <http:operation location="/getApplicationAccessRight" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuleAccessRight">
+      <http:operation location="/getModuleAccessRight" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuleFunctionAccessRight">
+      <http:operation location="/getModuleFunctionAccessRight" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIsGroup">
+      <http:operation location="/getIsGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserData">
+      <http:operation location="/getUserData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isUserInformationExists">
+      <http:operation location="/isUserInformationExists" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInformation">
+      <http:operation location="/getUserInformation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Display_NoteAdmin">
+      <http:operation location="/Display_NoteAdmin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Users_x0020_Access_x0020_Web_x0020_ServicesHttpPost" type="tns:Users_x0020_Access_x0020_Web_x0020_ServicesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getApplicationList">
+      <http:operation location="/getApplicationList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserNameIfValid">
+      <http:operation location="/getUserNameIfValid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationAccessRight">
+      <http:operation location="/getApplicationAccessRight" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuleAccessRight">
+      <http:operation location="/getModuleAccessRight" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModuleFunctionAccessRight">
+      <http:operation location="/getModuleFunctionAccessRight" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIsGroup">
+      <http:operation location="/getIsGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserData">
+      <http:operation location="/getUserData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isUserInformationExists">
+      <http:operation location="/isUserInformationExists" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInformation">
+      <http:operation location="/getUserInformation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Display_NoteAdmin">
+      <http:operation location="/Display_NoteAdmin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Users_x0020_Access_x0020_Web_x0020_Services">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Services yang digunakan untuk mendapatkan informasi mengenai data-data user&lt;br&gt;Koneksi yang di pakai adalah ke Server : 10.10.1.9 dan Database : AAM&lt;br&gt;</wsdl:documentation>
+    <wsdl:port name="Users_x0020_Access_x0020_Web_x0020_ServicesSoap" binding="tns:Users_x0020_Access_x0020_Web_x0020_ServicesSoap">
+      <soap:address location="http://10.10.1.41:8089/publicWebservices/ClassUsers.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Users_x0020_Access_x0020_Web_x0020_ServicesSoap12" binding="tns:Users_x0020_Access_x0020_Web_x0020_ServicesSoap12">
+      <soap12:address location="http://10.10.1.41:8089/publicWebservices/ClassUsers.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Users_x0020_Access_x0020_Web_x0020_ServicesHttpGet" binding="tns:Users_x0020_Access_x0020_Web_x0020_ServicesHttpGet">
+      <http:address location="http://10.10.1.41:8089/publicWebservices/ClassUsers.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Users_x0020_Access_x0020_Web_x0020_ServicesHttpPost" binding="tns:Users_x0020_Access_x0020_Web_x0020_ServicesHttpPost">
+      <http:address location="http://10.10.1.41:8089/publicWebservices/ClassUsers.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

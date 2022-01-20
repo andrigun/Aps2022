@@ -1,0 +1,106 @@
+
+--Delete data pasangan di datachannelcbas
+begin tran
+
+select * from datachannelcbas where idofthistable in (
+'63716', '63663'
+)
+and relatedtype='PSN'
+
+delete from datachannelcbas where idofthistable in (
+'63716', '63663'
+)
+and relatedtype='PSN'
+
+select * from datachannelcbas where idofthistable in (
+'63716', '63663'
+)
+and relatedtype='PSN'
+
+rollback tran
+
+--------
+
+
+-- Delete data pasangan di CBAS tbl ChannelData
+begin tran
+select * from cbasslik.dbo.ChannelData where idofthistable in (
+'63716', '63663'
+) and relatedType = 'PSN'
+
+delete from cbasslik.dbo.ChannelData where idofthistable in (
+'63716', '63663'
+) and relatedType = 'PSN'
+
+select * from cbasslik.dbo.ChannelData where idofthistable in (
+'63716', '63663'
+) and relatedType = 'PSN'
+--select top 3 * from cbasslik.dbo.applicant where appid in ('178498', '180778')
+rollback tran
+
+--------
+
+-- yg tricki dari tabel datachannelcbas ke tbl applicant, idCBAS di tbl datachannelcbas jadi ReffNumber pada tbl applicant
+select * from datachannelcbas where idofthistable in (
+'63716', '63663'
+)
+
+select * from cbasslik.dbo.applicant where reffnumber in (
+'178474', '180777')
+
+----
+
+-- Delete data pasangan di CBAS tbl appicant	--idDataChannel / appid --> 178498, 180778
+begin tran
+select * from cbasslik.dbo.applicant where reffnumber in (
+'178474', '180777'
+) and status_app = 'PSN'
+
+
+delete  from cbasslik.dbo.applicant where reffnumber in (
+'178474', '180777'
+) and status_app = 'PSN'
+
+select * from cbasslik.dbo.applicant where reffnumber in (
+'178474', '180777'
+) and status_app = 'PSN'
+--select pwd_viewer from cbasslik.dbo.applicant --Untuk mengetahui sedang di task mana ?
+rollback tran
+
+-- cek di tabel checkingTask
+select * from cbasslik.dbo.checkingTask where iddatachannel in ('178498','180778') --pasangan tapi blank
+
+-- Delete pada tabel CheckingTask untuk data Pasangan
+begin tran
+select * from cbasslik.dbo.checkingTask where iddatachannel in (
+'178498','180778'
+)
+
+delete from cbasslik.dbo.checkingTask where iddatachannel in (
+'178498','180778'
+)
+
+select * from cbasslik.dbo.checkingTask where iddatachannel in (
+'178498','180778'
+)
+
+commit tran
+
+--------------
+
+
+-- Delete Task untuk Debitur kecuali typeOfChecking = 'e-KTP', kemudian update statusTask = 'N'
+
+begin tran
+
+select * from cbasslik.dbo.checkingtask 
+--update cbasslik.dbo.checkingtask set completed_datetime = null, statusTask = 'N', resultTask = null, decision = null
+--delete cbasslik.dbo.checkingtask
+where iddatachannel in ( 
+'178474',
+'180777'
+
+) 
+and typeOfChecking <> 'e-KTP'
+
+rollback tran

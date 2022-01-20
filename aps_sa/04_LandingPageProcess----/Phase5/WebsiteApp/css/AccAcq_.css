@@ -1,0 +1,231 @@
+a:link {color:#0066CC; text-decoration:none;}
+a:hover {color:#0015B6; text-decoration:none;}
+a:active {color:#CC0000; text-decoration:none;}
+a:visited {color:#0066CC; text-decoration:none;}
+
+a.underline:link {color:#0066CC; text-decoration: underline;}
+a.underline:hover {color:#0015B6; text-decoration: underline;}
+a.underline:active {color:#CC0000; text-decoration: underline;}
+a.underline:visited {color:#0066CC; text-decoration: underline;}
+
+body {
+scrollbar-3dlight-color:#B3C76D;
+scrollbar-arrow-color:#999999;
+scrollbar-track-color:#ededed;
+scrollbar-darkshadow-color:#B3C76D;
+scrollbar-face-color:#DCE2C9;
+scrollbar-highlight-color:#DCE2C9;
+scrollbar-shadow-color:#DCE2C9;
+}
+
+font {
+	font-family: Verdana, Arial, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+select {font-family:verdana,Arial,tahoma,san-serif;font-size:11px;color:#000000;background-color:#F4F4F4;border-color:#003399;border-style:solid;border-width:1px;}
+
+TABLE	{font-family:verdana,Arial,tahoma,sans-serif; font-size:11px;border:0px}
+
+.fontbesar {
+	font-family: Verdana, Arial, Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+
+.cssButton2
+{
+    font-family: tahoma, trebuchet ms;
+    font-size: 11px;
+    border: 1px solid #288A3D;
+    color: white;
+    cursor: hand;
+    margin-right:14px;
+    height: 25px;
+    width: 50px;
+    background-color:#87c313;
+    font-weight:bold;
+    float:right;
+}
+
+.bg
+{
+	background-image:url(images/bg.png);
+	background-repeat:no-repeat;
+	}
+
+.cssButton
+{
+    font-family: tahoma, trebuchet ms;
+    font-size: 11px;
+    border: 1px solid #288A3D;
+    color: white;
+    padding: 1px;
+    cursor: hand;
+    margin-top: 0px;
+    height: 25px;
+    width: 200px;
+    background-color:#87c313;
+    font-weight:bold;
+    float:center;
+    margin-left:25px;
+}
+
+
+.cssButton3
+{
+    font-family: tahoma, trebuchet ms;
+    font-size: 11px;
+    border: 1px solid #288A3D;
+    color: white;
+    padding: 1px;
+    cursor: hand;
+    margin-top: 0px;
+    height: 25px;
+    width: 80px;
+    background-color:#87c313;
+    font-weight:bold;
+    float:left;
+    margin-left:25px;
+}
+
+
+
+.inptype
+ {border: 1px solid #C1C1C1;
+    font-family:verdana,Arial,tahoma,san-serif;    
+    font-size:11px;    
+    color:#000000;    
+    background-color:#FFFFFF;    
+    height: 18px;
+    width: 283px;
+    margin-left:8px;
+}
+
+.inptypehijau
+ {font-family:verdana,Arial,tahoma,san-serif;font-size:11px;color:#000000;background-color:#D9E3B6;border-bottom: 1px solid #B6C973;border-right: 1px solid #B6C973;border-left: 1px solid #B6C973;border-top: 1px solid #B6C973;height:20px;}
+
+
+.inptypeReadOnly
+ {border: 1px solid #C1C1C1;
+    font-family:verdana,Arial,tahoma,san-serif;    font-size:11px;    color:#000000;    background-color:#c0c0c0;    height: 18px;
+}
+
+.pbttn
+ {font-family:verdana,Arial,tahoma,sans-serif;font-size:10px;background: #9FB359;border-bottom: 1px solid #333333;border-right: 1px solid #333333;border-left: 1px solid #D9E3B6;border-top: 1px solid #D9E3B6;color:#FFFFFF;height: 22px;text-decoration:none;padding-left: 3px;padding-right: 3px;padding-top:1px;cursor: hand;}
+
+.tablegrid
+{
+	border:0px;
+	background-color: #E7E3E7;
+	 
+}
+
+
+
+
+.tab
+{
+	font-family: Verdana, Arial, Tahoma, sans-serif;
+	
+	font-size: 10px;
+	color: #7A8F32;
+}
+
+.tdjudul
+{
+	background-color: #F4F4DF;
+	font-weight: bold;
+	font-size: 10px;
+}
+
+.tdtopi
+{
+	background-color: #E0E0A3;
+	font-weight: bold;
+}
+
+.tdtopikiri
+{
+	background-image: url(Images/HijauKiri.gif);
+}
+
+.tdtopikanan
+{
+	background-image: url(Images/HijauKanan.gif);
+}
+
+
+.tdganjil
+{
+	
+	background-color:white;
+	
+
+ }
+ 
+ 
+
+.tdgenap
+{background-color: white;
+ }
+
+.opaqueLayer
+{
+    width:100%;
+    height:100%;
+    z-index:100;
+	visibility:hidden;
+	cursor:wait;
+	position:absolute;
+	top:0px;
+	left:0px;
+	filter:alpha(opacity=30);
+	background-color:white;	
+}
+
+
+.tablegrid2
+{
+	border:1px;
+	background-color: #E7E3E7;
+	height:10px;
+	color:#000000;
+	padding:5px;
+	text-align:left;
+	vertical-align:middle;
+    
+    
+}
+
+.tablegrid3
+{
+	border:1px;
+	height:10px;
+	text-align:left;
+	color:#138f34;
+	font-weight:bold;
+	margin-left:8px;
+    
+    
+}
+
+.tablegridnote
+{
+	border:0px;
+	height:10px;
+	color:Blue;
+	padding:0px;
+	text-align:left;
+	vertical-align:top;
+    
+    
+}
+
+
+.aClass
+{
+	cursor:hand;
+}

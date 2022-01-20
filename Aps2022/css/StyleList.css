@@ -1,0 +1,86 @@
+.tdTitle{
+	padding-left : 5px;
+	padding-right : 5px;
+	background-color : #5CB32B;	
+	font-family : trebuchet ms;
+	font-size : 11px;
+	color : #ffffff;
+	border-right : solid 1px #ffffff;
+	font-weight:bold;
+	text-align:center;
+	height:30px;
+}
+
+.tdRow{
+	padding-left : 5px;
+	padding-right : 5px;
+	padding-top:3px;
+	padding-bottom:3px;
+	font-family : trebuchet ms;
+	font-size : 11px;
+	border:solid 1px #F1F7E7 ;
+	color : #808080;
+}
+
+
+a.pageLink:link	
+{
+	font-family : Trebuchet MS ;
+	font-size :12px ;
+	text-decoration:underline	;
+	color:	#3333ff;
+	}	
+		
+		
+a.pageLink:hover	
+{
+	font-family : Trebuchet MS ;
+	font-size :12px ;
+	text-decoration:	underline;
+	color: #ff3333;
+	}
+
+
+a.pageLink:visited	
+{
+	font-family : Trebuchet MS ;
+	font-size :12px ;
+	text-decoration:underline	;
+	color:	#3333ff;
+	}	
+
+	
+.pageActive
+{
+	font-family : Trebuchet MS ;
+	font-size :12px ;
+	text-decoration:	underline;
+	color: #ff3333;
+	}
+
+
+a.cellLink:link	
+{
+	font-family : Trebuchet MS ;
+	font-size :12px ;
+	text-decoration:underline	;
+	color:	#3333ff;
+	}	
+		
+		
+a.cellLink:hover	
+{
+	font-family : Trebuchet MS ;
+	font-size :12px ;
+	text-decoration:	underline;
+	color: #ff3333;
+	}
+
+
+a.cellLink:visited	
+{
+	font-family : Trebuchet MS ;
+	font-size :12px ;
+	text-decoration:underline	;
+	color:	#3333ff;
+	}	

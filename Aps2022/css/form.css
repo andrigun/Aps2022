@@ -1,0 +1,124 @@
+.cssLabelText {
+	font-family:trebuchet ms; 
+	color:#333333;
+	font-size:11px ;
+}
+
+.cssTextNoBox {
+	BORDER: 0px solid #C0C0C0;
+	BACKGROUND: white;
+	FONT-FAMILY: Trebuchet MS;
+	FONT-SIZE: 11px;
+	Height: 20;
+}
+
+.cssTextBox {
+	BORDER: 1px solid #C0C0C0;
+	BACKGROUND: white;
+	FONT-FAMILY: Trebuchet MS;
+	FONT-SIZE: 11px;
+	Height: 20;
+	padding-left:2px;
+}
+
+.cssTextBoxDis {
+	BORDER: 1px solid #C0C0C0;
+	BACKGROUND: #f0f0f0;
+	FONT-FAMILY: Trebuchet MS;
+	FONT-SIZE: 11px;
+	Height: 20;
+}
+.cssTextBoxErr {
+	border-style:none;
+	BACKGROUND: white;
+	FONT-FAMILY: Trebuchet MS;
+	FONT-SIZE: 11px; 
+	font-weight:bold; 
+	font-style:italic;    
+	color: red; 
+	Height: 20;
+}
+ 
+
+
+.cssTextBoxNum {
+	BORDER: 1px solid #C0C0C0;
+	BACKGROUND: white;
+	FONT-FAMILY: Trebuchet MS;
+	FONT-SIZE: 11px;
+	Height: 20;
+	text-align: right;
+}
+
+.cssTextBoxNumDis {
+	BORDER: 1px solid #C0C0C0;
+	BACKGROUND: #f0f0f0;
+	FONT-FAMILY: Trebuchet MS;
+	FONT-SIZE: 11px;
+	Height: 20;
+	text-align: right;
+}
+
+
+.cssTextArea
+{
+	background-color: white;
+	border: 1px solid #C0C0C0;
+   FONT-FAMILY: Trebuchet MS;
+   FONT-WEIGHT: Normal;
+   FONT-SIZE: 11px;
+
+	scrollbar-3dlight-color: gray;
+	scrollbar-arrow-color: black;
+	scrollbar-base-color:;
+	scrollbar-darkshadow-color: gray;
+	scrollbar-face-color: #D8D4D0;
+	scrollbar-highlight-color: ;
+	scrollbar-shadow-color: #D8D4D0
+}
+
+.cssTextAreaDis
+{
+	background-color: f0f0f0;
+	border: 1px solid #C0C0C0;
+   FONT-FAMILY: Trebuchet MS;
+   FONT-WEIGHT: Normal;
+   FONT-SIZE: 11px;
+
+	scrollbar-3dlight-color: gray;
+	scrollbar-arrow-color: black;
+	scrollbar-base-color:;
+	scrollbar-darkshadow-color: gray;
+	scrollbar-face-color: #D8D4D0;
+	scrollbar-highlight-color: ;
+	scrollbar-shadow-color: #D8D4D0
+}
+
+
+.cssButton{
+	font-family : tahoma, trebuchet ms;
+	font-size : 11px;
+	border:solid 3px #eeeeee;	A8030A;
+	background-color:#288A41;
+	color:#ffffff;
+	padding:1px;
+	cursor:hand;
+}
+
+
+.cssCheckBox
+{
+	BORDER: 1px solid #C0C0C0;
+	BACKGROUND: white;
+	cursor :hand ;	
+}
+
+
+
+.dropDown
+{
+  position: absolute;
+   
+  width: 120px;
+  border: 0;
+}

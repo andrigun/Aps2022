@@ -1,0 +1,209 @@
+body{
+	background-color:#FFFFFF; 	width:100%; 	margin-left:auto; 	margin-right:auto;
+	margin-top:0; 	padding-top:0; 	font:  "Lucida Sans Unicode", "Lucida Grande", arial, san-serif; 
+}
+FONT {
+	FONT-SIZE: 11px; FONT-FAMILY: Terbuchet MS, Verdana, Arial, Tahoma, sans-serif
+}
+a.textLink:link	
+{
+	font-family : Verdana, Arial, Tahoma, sans-serif ; 	font-size :12px ;
+	text-decoration:underline; 	color:	#3333ff; 	
+}		
+a.textLink:hover	
+{
+	font-family : Verdana, Arial, Tahoma, sans-serif; 	font-size :12px ;
+	text-decoration: underline; 	color: #3333ff;
+	}
+a.textLink:visited	
+{
+	font-family : Verdana, Arial, Tahoma, sans-serif; 	font-size :12px ;
+	text-decoration:underline; 	color:	#3333ff;
+	}	
+.btndefaultclean {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    border: none;      height : 28px;     cursor : hand;     	background-color: transparent;
+    /* 	border-top-color: #FC9; 	border-left-color: #FC9; 	background-color : #c0c0c0; */
+}
+.btndefault {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    border: 1px double #000000;     height : 28px;     cursor : hand;
+    /* 	border-top-color: #FC9; 	border-left-color: #FC9; 	*/
+	background-color : #c0c0c0;
+}
+.btndefault:hover {
+    background-color: #4CAF50; /* Green */ 
+    color: white;
+}
+.btnMenu {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    border: 1px solid #ffffff;     border-left :1px solid #c0c0c0;     border-right :1px solid #c0c0c0;
+    height : 35px;     cursor : hand;     color : #0000ff; 	background-color : #ffffff;
+}
+.btnMenu:hover {
+    background-color: #f0f0f0;     color: #000000;     border: 1px solid #c0c0c0;
+}
+.cssMessageTitle {
+	font-family:  Segoe UI Light , Segoe UI ,Calibri, Verdana, Arial, Tahoma, sans-serif ; 
+	color:#000000; 	font-size:14px ; 	text-decoration:none;
+}
+.cssMessageText {
+	font-family:Calibri, Verdana, Arial, Tahoma, sans-serif ; 
+	color:#000000; 	font-size:14px ; 	text-decoration:none;
+}
+.cssNoteText {
+	font-family:Verdana, Arial, Tahoma, sans-serif ; 
+	color:#000000; 	font-size:14px; 	text-decoration:none;
+}
+.cssLabelText {
+	font-family:Verdana, Arial, Tahoma, sans-serif; 
+	color:#000000; 	font-size:12px ; 	text-decoration:none;
+}
+.cssLabelTextRed{
+	font-family:Verdana, Arial, Tahoma, sans-serif; 
+	color:red; 	font-size:12px ; 	text-decoration:none;
+}
+.cssTextBox {
+	BORDER: 1px solid #C0C0C0; 	BACKGROUND: white; 	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-SIZE: 12px; 	Height: 20; 	padding-left:2px;
+}
+.cssTextBoxDis {
+	BORDER: 1px solid #C0C0C0; 	BACKGROUND: #f0f0f0;
+	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-SIZE: 12px; 	Height: 20;
+}
+.cssTextBoxNum {
+	BORDER: 1px solid #C0C0C0; 	BACKGROUND: white;
+	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-SIZE: 12px; 	Height: 20; 	text-align: right;
+}
+.cssTextBoxNumDis {
+	BORDER: 1px solid #C0C0C0; 	BACKGROUND: #f0f0f0;
+	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-SIZE: 12px; 	Height: 20; 	text-align: right;
+}
+.cssTextArea
+{
+	background-color: white; 	border: 1px solid #C0C0C0;
+	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif; 	FONT-WEIGHT: Normal;
+	FONT-SIZE: 12px; 	text-align:left; 	width: 475px;
+}
+.cssTextAreaDis
+{
+	background-color: #f0f0f0; 	border: 1px solid #C0C0C0;
+	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-WEIGHT: Normal; 	FONT-SIZE: 12px; 	text-align:left;	
+}
+.cssTextArea1
+{
+	background-color: white; 	border: 1px solid #C0C0C0;
+	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-WEIGHT: Normal; 	FONT-SIZE: 12px; 	text-align:left;
+}
+.cssTextLink {
+	fONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-SIZE: 10px; 	Height: 20;
+}
+.cssButton{
+	font-family : Verdana, Arial, Tahoma, sans-serif;
+	font-size : 11px; 	border:solid 1px #c0c0c0;		background-color:white;	
+	color:#000000; 	padding:1px; 	cursor:hand; 	height:20px;
+}
+.cssCheckBox
+{
+	BORDER: 1px solid #C0C0C0; 	BACKGROUND: white; 	cursor :hand ;	
+}
+.cssTextBoxNoBorder {
+	BORDER: 1px solid #8DC01E; 	BACKGROUND: #BDE761; 	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-SIZE: 12px; 	Height: 20px; 	padding-left:2px;
+}
+.cssTextBoxNumNoBorder {
+	BORDER: 1px solid #8DC01E; 	BACKGROUND: #BDE761;
+	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-SIZE: 11px; 	Height: 20; 	text-align: right;
+}
+.cssButtonLookupMKT{
+	cursor:hand;
+	background-image: url(../Images/userao.gif);
+	background-color: transparent;
+	width:15px;
+	height:15px;
+	border:none;
+}
+.cssButtonSave{
+	cursor:hand; 	BACKGROUND-IMAGE: url(../Images/ButtonSave.gif);
+	background-color: transparent; 	width:100px; 	height:20px; 	border:none;		
+}
+.cssButtonNext{
+	cursor:hand; 	BACKGROUND-IMAGE: url(../Images/ButtonNext.gif);
+	background-color: transparent; 	width:102px; 	height:22px; 	border:none;		
+}
+.cssButtonContinue{
+	cursor:hand; 	BACKGROUND-IMAGE: url(../Images/ButtonContinue.gif);
+	background-color: transparent; 	width:100px; 	height:20px; 	border:none;	
+}
+.cssButtonReset{
+	cursor:hand; 	BACKGROUND-IMAGE: url(../Images/ButtonReset.gif); 	background-color: transparent;
+	width:100px; 	height:20px; 	border:none;	
+}
+.cssButtonClose{
+	cursor:hand; 	BACKGROUND-IMAGE: url(../Images/ButtonClose.gif);
+	background-color: transparent; 	width:102px; 	height:22px; 	border:none;	
+}
+.cssButtonBack{
+	cursor:hand; 	BACKGROUND-IMAGE: url(../Images/ButtonBack.gif);
+	background-color: transparent; 	width:100px; 	height:19px; 	border:none;		
+}
+.cssButtonSearchPop{
+	cursor:hand; 	BACKGROUND-IMAGE: url(../Images/IconDetail.gif);
+	background-color: transparent; 	width:10px; 	height:15px; 	border:none;		
+}
+.cssButtonSearch{
+	cursor:hand; 		BACKGROUND-IMAGE: url(../Images/ButtonSearch.gif);
+		background-color: transparent; 		width:100px; 		height:20px; 		border:none;
+}
+.cssButtonStop{
+	cursor:hand; 	BACKGROUND-IMAGE: url(../Images/stop.gif);
+	background-color: transparent; 	width:100px; 	height:20px; 	border:none;	
+}
+.cssButtoncontinue{
+	cursor:hand; 	BACKGROUND-IMAGE: url(../Images/continue.gif);
+	background-color: transparent; 	width:100px; 	height:20px; 	border:none;	
+}
+.cssButtonLookup{
+	cursor:hand; 	background-image: url(../Images/IconDetail.gif);	
+	background-color: transparent; 	width:15px; 	height:15px; 	border:none;
+}
+
+.menupath {font: 10px "Lucida Sans Unicode", "Lucida Grande", arial, san-serif; color:#aaaaaa; }
+.menupath a {text-decoration:none;font: 10px "Lucida Sans Unicode", "Lucida Grande", arial, san-serif; color:#aaaaaa;}
+.menupath a:hover {text-decoration:none;font: 10px "Lucida Sans Unicode", "Lucida Grande", arial, san-serif; color:#139034;}
+
+.formspace 
+{
+	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-SIZE: 12px;	margin-left:20px; 	margin-top:10px;
+}
+.formspacesub
+{
+	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-SIZE: 12px; 	margin-left:20px; 	margin-top:0px;
+}
+.formspaceBesar
+{
+	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif;
+	FONT-SIZE: 12px;	margin-left:50px; 	margin-top:40px;
+}
+.inptypeGrey {
+	BORDER-RIGHT: #c1c1c1 1px solid; BORDER-TOP: #c1c1c1 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #c1c1c1 1px solid; COLOR: #383838; BORDER-BOTTOM: #c1c1c1 1px solid; FONT-FAMILY: verdana,Arial,tahoma,san-serif; BACKGROUND-COLOR: #ffffff
+}
+.tdganjil {
+	BACKGROUND-COLOR: #ffffff; 	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif; 	FONT-SIZE: 12px;
+}
+.tdgenap { 
+	BACKGROUND-COLOR: #f4faff; 	FONT-FAMILY: Verdana, Arial, Tahoma, sans-serif; 	FONT-SIZE: 12px;
+}
+.tdHeader 
+{
+	BACKGROUND-COLOR: #B9CDE5; 	border-color : #ffffff;
+	}

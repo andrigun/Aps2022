@@ -1,0 +1,27 @@
+select * from [tblhistory]
+
+
+select * from [tbldetail]
+
+
+ select * from tbl_notif_BM_log
+ truncate table tbl_notif_BM_log
+
+ select * from tbl_notif_CA_log
+truncate table tbl_notif_CA_log
+
+
+update [tbldetail]
+set statusid='NEWDT', canote='', cancelid='', bmnote='', userid='Web'
+
+
+delete [tblhistory] where status <> 'NEWDT'
+
+
+update tbldetail 
+set statusid= 'CBASC', canote='',cancelid='', bmnote=''
+where statusid <> 'NEWDT'
+
+
+select * from tblhistory
+delete tblhistory where status <> 'NEWDT'
