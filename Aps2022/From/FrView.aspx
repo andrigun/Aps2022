@@ -4,7 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-        <script src="../script/jquery.min.js"></script>
+    
+   <link href="../css/form.css" rel="stylesheet" />  
+    <link href="../css/StyleList.css" rel="stylesheet" />
+    <link href="../css/Styles.css" rel="stylesheet" />
+     
+
+    <script src="../script/jquery.min.js"></script>
     <script src="../script/jquery-1.5.1.js"></script>
     <script src="../script/jquery.json-1.3.min.js"></script> 
     <link href="../script/jquery.alerts.css" rel="stylesheet" />
@@ -20,11 +26,7 @@
     <title>Form Detail APS</title>
     
 <script type="text/javascript"> 
-//here goes the script.. !!
-    $( function() {
-    $( "#txttglMulaiAPS" ).datepicker();
-    });
-
+//here goes the script..test !! 
 </script> 
  
 </head>
@@ -39,8 +41,10 @@
 				</tr>
             </table>
        <%--   <hr style="width:95%;text-align:left;margin-left:0">--%>
+
+
 <style>
-         table.comicGreen {
+table.comicGreen {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   background-color: #FFFFFF;
   width: 95%;
@@ -79,7 +83,8 @@ table.comicGreen thead th:first-child {
 table.comicGreen tfoot td {
   font-size: 21px;
 }
-          </style>  
+ </style>  
+
         <div id="DivQ"  ></div>
           <link href="../css/TabCS.css" rel="stylesheet" />
         
@@ -140,12 +145,22 @@ text-shadow: 0px 1px 0px #86ae47;
  <a id="LblSave">  </a> 
 
 <br />
+          
+
+
 <ul id="tabs"> 
     <li><a href="#" name="tab1">List Of History </a></li>
     <li><a href="#" name="tab2">List Of Agreement  </a></li> 
 </ul> 
+<!-- datagrid -->  
+     <link href="css/demo_page.css" rel="stylesheet" /> 
+    <link href="css/demo_table_jui.css" rel="stylesheet" />
+    <link href="css/jquery-ui-1.8.4.custom.css" rel="stylesheet" />
+    <script src="css/jquery.dataTables.js"></script>
+    <script src="css/datesort.js"></script>
+<!-- end of datagrid --> 
 <div id="content" style="border:hidden">
-    <div id="tab1"></div> 
+    <div id="tab1" ><div id="Divhist" class="tabcontent"></div></div> 
     <div id="tab2"></div> 
 </div>
 

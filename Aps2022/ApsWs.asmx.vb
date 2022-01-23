@@ -51,11 +51,6 @@ Public Class ApsWs
     Inherits System.Web.Services.WebService
 
     <WebMethod()>
-    Public Function HelloWorld() As String
-        Return "Hello World"
-    End Function
-
-    <WebMethod()>
     Public Function LoadListAps(ByVal sPksNo As String, ByVal sSupplier As String, ByVal RequestFrom As String, ByVal RequestTo As String, ByVal AprDateFrom As String, ByVal AprDateTo As String) As String
         Try
             Dim rawresponse As String = ""
@@ -122,7 +117,75 @@ Public Class ApsWs
 
             Return sResult
         Catch ex As Exception
+            Return ex.Message
+        End Try
+    End Function
 
+
+    <WebMethod>
+    Public Function GetTopUpHistorybyReqID(ByVal RequestID As String) As String
+        Try
+            Dim rawresponse As String = ""
+            Dim sResult As String = ""
+            Dim sTable As String = ""
+
+            Dim oDs As New DataSet
+            Dim oLoad As New ClsRes
+            'Dim nCol As Byte
+            Dim nCol, nRow, x As Integer
+            Dim i, j As Integer
+
+            oDs = oLoad.GetTopUpHistorybyReqID(RequestID)
+            nCol = oDs.Tables(0).Columns.Count - 1
+            nRow = oDs.Tables(0).Rows.Count - 1
+            sTable += " <table class='comicGreen'> "
+            sTable += " <thead><tr>"
+            sTable += "<TD field='topUpID' > Top ID</TD>"
+            sTable += "<TD field='topUpno' > Top Seqno</TD>"
+            sTable += "<TD field='tgltopup' > tgltopup</TD>"
+            sTable += "<TD field='tglMulaiAPS' > Tanggal Mulai</TD>"
+            sTable += "<TD field='tglBerakhirAPS' > Tgl Berakhir  </TD>"
+            sTable += "<TD field='plafon' > plafon  </TD>"
+            sTable += "<TD field='totalSalesUnit' > total SalesUnit  </TD>"
+            sTable += "<TD field='totalPencairan' > total Pencairan </TD>"
+            sTable += "<TD field='penalty' > penalty </TD>"
+            sTable += "<TD field='sisasaldo' > sisa saldo </TD>"
+            sTable += "<TD field='metodePlafonCode' > metodePlafonCode </TD>"
+
+            sTable += " </tr></thead>"
+
+            With oDs.Tables(0)
+                sTable = sTable & "<tbody> "
+                For x = 0 To nRow
+                    sTable += "<tr>"
+                    For i = 0 To 10 'nCol
+                        sTable += "<td>" & .Rows(x).Item(i) & "</td>"
+                    Next
+
+                    'sTable += "<td>" & .Rows(x).Item(2) & "</td>"
+                    'sTable += "<td>" & .Rows(x).Item(3) & "</td>"
+                    'sTable += "<td>" & .Rows(x).Item(4) & "</td>"
+                    'sTable += "<td>" & .Rows(x).Item(5) & "</td>"
+                    'sTable += "<td>" & .Rows(x).Item(6) & "</td>"
+                    'sTable += "<td>" & .Rows(x).Item(7) & "</td>"
+                    'sTable += "<td>" & .Rows(x).Item(1) & "</td>"
+
+
+                    sTable += "</td> </tr>"
+                    Next
+
+
+                    sTable = sTable & "</tbody>"
+            End With
+            sTable += "</tbody></table>"
+            sResult = sTable
+
+
+            sResult = sTable
+            Return sResult
+
+        Catch ex As Exception
+            Return ex.Message
         End Try
     End Function
 

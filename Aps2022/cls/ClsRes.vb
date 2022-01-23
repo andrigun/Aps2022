@@ -35,6 +35,17 @@ Public Class ClsRes
         oDs = oData.executeQuery(sCmd, ClsData.ReturnType.DataSet, iErrNo)
         Return oDs
     End Function
+
+    Public Function GetTopUpHistorybyReqID(RequestID) As DataSet
+        Dim oDs As Object
+        Dim oData As New ClsData
+        Dim sCmd As String
+        Dim iErrNo = 0
+
+        sCmd = "exec   spGetTopUpHistorybyReqID  '" & RequestID & "'   "
+        oDs = oData.executeQuery(sCmd, ClsData.ReturnType.DataSet, iErrNo)
+        Return oDs
+    End Function
     Public Function ViewAgreementCard(ByVal agreementno As String) As DataSet
 
         Dim oDs As Object
